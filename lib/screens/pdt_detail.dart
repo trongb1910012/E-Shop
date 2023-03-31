@@ -41,6 +41,10 @@ class DetailPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            duration: Duration(seconds: 3),
+            content: Text('Item is added to Cart'),
+          ));
           cart.addItem(productId, loadedPdt.name, loadedPdt.price);
         },
         child: Icon(

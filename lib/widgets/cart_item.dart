@@ -20,6 +20,10 @@ class CartPdt extends StatelessWidget {
         color: Colors.red,
       ),
       onDismissed: (direction) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          duration: Duration(seconds: 3),
+          content: Text('Item is removed from Cart'),
+        ));
         cart.removeItem(productId);
       },
       child: Card(

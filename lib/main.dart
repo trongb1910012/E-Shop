@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'E-Shop',
         theme: ThemeData(
-          primaryColor: Colors.red,
+          appBarTheme: AppBarTheme(color: Color.fromARGB(255, 42, 159, 79)),
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Color.fromARGB(255, 42, 159, 79),
+          ),
         ),
         home: HomePage(),
         routes: {

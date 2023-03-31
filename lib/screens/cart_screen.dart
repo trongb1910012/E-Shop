@@ -65,6 +65,10 @@ class _CheckoutButtonState extends State<CheckoutButton> {
       onPressed: widget.cart.totalAmount <= 0
           ? null
           : () async {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                duration: Duration(seconds: 3),
+                content: Text('Item is ordered'),
+              ));
               await Provider.of<Orders>(context, listen: false).addOrder(
                   widget.cart.items.values.toList(), widget.cart.totalAmount);
               widget.cart.clear();
